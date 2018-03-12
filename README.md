@@ -86,7 +86,7 @@ sudo apt-get install build-essential git vim
 
 - Python Development
 ```bash
-sudo apt-get install python-dev python-pip python-virtualenv python-numpy python-matplotlib python3-pip python3-dev jupyter
+sudo apt-get install python-dev python-pip python-virtualenv python-numpy python-matplotlib python3-pip python3-dev
 ```
 
 - install conda
@@ -95,6 +95,12 @@ sudo apt-get install python-dev python-pip python-virtualenv python-numpy python
 sudo chmod a+x Miniconda2-latest-Linux-x86_64.sh
 bash Miniconda-latest-Linux-x86_64.sh
 ```
+
+- install jupyter and notebook conda to manage conda environments in jupyter
+```bash
+conda install jupyter notebook nb_conda
+```
+ 
 - Instal tensorflow
     - create conda environment for tensorflow
 ```bash
