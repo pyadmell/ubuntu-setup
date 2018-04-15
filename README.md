@@ -1,4 +1,8 @@
 # Ubuntu Base Setup
+- Wifi driver
+    - disable secure boot
+    - https://help.ubuntu.com/community/WifiDocs/Driver/bcm43xx
+    - https://askubuntu.com/questions/760075/cant-view-wifi-networks-after-upgrading-to-ubuntu-16-04/762055
 
 - update packages
 
