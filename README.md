@@ -36,7 +36,7 @@ nvidia-smi
 check tensorflow installation guide and issues to choose the right CUDA version (currently 9.0 works with tf 1.5)
 >>>
 
-```bahs
+```bash
 wget -O <cuda-repo-ubuntu1604_90.deb> http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64/cuda-repo-<cuda-repo-ubuntu1604_90.deb>
 sudo dpkg -i <cuda-repo-ubuntu1604_90.deb>
 sudo apt-key adv --fetch-keys http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64/7fa2af80.pub
@@ -46,7 +46,7 @@ echo 'export PATH=/usr/local/cuda-9.0/bin${PATH:+:${PATH}}' >> ~/.bashrc
 echo 'export LD_LIBRARY_PATH=/usr/local/cuda-9.0/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}' >> ~/.bashrc
 ```
 
-- If not successfull, instal CUDA Toolkit 8.0 for x64 Ubuntu 16.0 loaclly
+- If not successful, instal CUDA Toolkit 8.0 for x64 Ubuntu 16.0 locally
 ```bash
 wget -O cuda_8_linux.run https://developer.nvidia.com/compute/cuda/8.0/Prod2/local_installers/cuda_8.0.61_375.26_linux-run
 sudo chmod +x cuda_8_linux.run
@@ -124,7 +124,7 @@ conda clean -tp
 ```
 
 
-- check installation, run simple python scipt from console
+- check installation, run simple python script from console
 ```bash
 python
 ```
