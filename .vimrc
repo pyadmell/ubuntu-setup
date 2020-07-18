@@ -6,17 +6,41 @@ Plug 'itchyny/lightline.vim'
 " Plug 'mattn/emmet-vim'
 Plug 'scrooloose/nerdtree'
 Plug 'terryma/vim-multiple-cursors'
+" Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-git'
 Plug 'w0rp/ale'
-Plug 'preservim/nerdcommenter'
-Plug 'jiangmiao/auto-pairs'
+" Plug 'preservim/nerdcommenter'
+" Plug 'jiangmiao/auto-pairs'
 Plug 'xavierd/clang_complete'
+Plug 'octol/vim-cpp-enhanced-highlight'
+Plug 'derekwyatt/vim-fswitch'
+Plug 'kana/vim-operator-user'
+Plug 'rhysd/vim-clang-format'
 Plug 'vim-scripts/DoxygenToolkit.vim'
 call plug#end()
 
 " path to directory where library can be found
 let g:clang_library_path='/usr/lib/llvm-6.0/lib'
+" enable mouse
+set mouse=a
+" set UTF-8 encoding
+set enc=utf-8
+set fenc=utf-8
+set termencoding=utf-8
+" disable vi compatibility
+set nocompatible
+" use indentation of previous line
+set autoindent
+" use smart indentation for C
+set smartindent
+" configure tab size and space instead of tabs
+set tabstop=2    " tab width = 2 spaces"
+set shiftwidth=2   " indent = 2 spaces"
+set expandtab      " extend tab to spaces
+" Wrap lines at 120 chars
+set textwidth =120
 " configure light line 
 set laststatus=2
 let g:lightline = {
@@ -24,30 +48,33 @@ let g:lightline = {
       \ }
 " Indent automatically depending on filetype
 filetype indent on
-" use indentation of previous line
-set autoindent
-" use intelligent indentation for C
-set smartindent
-" configure tabwidth and insert spaces instead of tabs
-set tabstop=4        " tab width is 4 spaces
-set shiftwidth=4     " indent also with 4 spaces
-set expandtab        " expand tabs to spaces
+" enable syntax and plugins for netrw
+syntax enable
+filetype plugin on
+" Search down into subfolders (run vim from the root)
+set path+=**
+" Display all matching files when tab
+set wildmenu
+" Create tag file
+command! MakeTags !ctags -R .
+" Tweaks for browsing
+let g:netrw_banner=0        " disable annoying banner
+let g:netrw_browse_split=4  " open in prior window
+let g:netrw_altv=1          " open splits to the right
+let g:netrw_liststyle=3     " tree view
+let g:netrw_list_hide=netrw_gitignore#Hide()
+let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+'
+" Always use bash syntax for sh filetype
+let g:is_bash=1
+" Search
+set ignorecase smartcase
+set grepprg=grep\ -IrsnH
 " Case insensitive search
 set ic
 " Higlhight search
 set hls
 " Wrap text instead of being on one line
 set lbr
-" set UTF-8 encoding
-set enc=utf-8
-set fenc=utf-8
-set termencoding=utf-8
-" disable vi compatibility (emulation of old bugs)
-set nocompatible
-" wrap lines at 120 chars. 80 is somewaht antiquated with nowadays displays.
-set textwidth=120
-" Set syntax on
-syntax on
 " turn line numbers on
 set number
 " highlight matching braces
